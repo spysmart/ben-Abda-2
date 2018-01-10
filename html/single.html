@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Single Page</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/butler" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+           <img src="img/logo.png" alt="image">
+        </div>
+        <div id="sidebarCollapse" class="btn-menu">
+            <!-- <img class="svg" src="img/menu-logo.svg" alt="image"> -->
+            <svg version="1.0" id="Rectangle"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 13"
+            style="enable-background:new 0 0 30 13;" xml:space="preserve">
+                <style type="text/css">
+                .st0{fill:#6C6C6C;}
+                </style>
+                <rect y="6" class="st0  st1" width="30" height="1"/>
+                <rect class="st0" width="20" height="1"/>
+                <rect y="12" class="st0" width="20" height="1"/>
+            </svg>
+        </div>
+        <div id="sidebarCollapse-x" class="btn-exit">
+            <img src="img/xx.svg" alt="image">
+        </div>
+        <ul class="list-unstyled">
+            <li class="active">
+                <a href="#">Tissue</a>
+            </li>
+            <li>
+                <a href="#">Rideaux et voilages</a>
+            </li>
+            <li>
+                <a href="#">Stores</a>
+            </li>
+            <li>
+                <a href="#">Accessoires</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="side-menu">
+        <div class="scrol">
+            <div class="ciseau text-center" id="ciseu" draggable="true" ondragstart="drag_start (event)" ondragend="drag_end (event)">
+                <img src="img/ciseau.svg" alt="image">
+            </div>
+            <div class="line text-center">
+                <img src="img/line.svg" alt="image">
+            </div>
+            <div class="x-1" id="drap_zone_1" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+                <img src="img/x.png" alt="image">
+            </div>
+            <div class="x-2">
+                <img src="img/x.png" alt="image">
+            </div>
+            <div class="x-3">
+                <img src="img/x.png" alt="image">
+            </div>
+        </div>
+    </div>
+    <header id="head">
+        <div class="container single-head">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="single-img">
+                        <img src="img/sing-head.png" alt="" class="img-responsive center-block">
+                    </div>                   
+                </div>
+                <div class="col-md-6"> 
+                    <div class="sing-desc">
+                        <h2>Prestigieux Textiles</h2>
+                        <h5>Tissu pour rideaux uni Indigo Helsinki Indigo Weave</h5>
+                        <span>Code: 0244000</span>
+                        <ul>
+                            <li>Nom de la collection: Helsinki</li>
+                            <li> Couleur: Indigo</li>
+                            <li>Numéro de motif: 7168/705</li>
+                            <li>Largeur: 137cm</li>
+                            <li>Largeur: 137cm</li>
+                            <li>Entretien: Lavable en machine à 30 °, Fer à repasser moyen (2 taches)</li>
+                            <li>Utilisation: Couvertures lâches, ameublement mou, tapisserie </li>
+                            <li>d'ameublement, rideaux, coussins </li>
+                            <li>Essai de frottement (Martindale): 44 000</li>
+                            <li>Poids (gsm): 412</li>
+                        </ul>
+                        <p class="descrip">
+                            Ce tissu uni de Prestigious Textiles est loin d'être ordinaire, 
+                            avec un tissage texturé et un poids luxuriant, lui donnant un beau drapé.
+                            Disponible dans un large spectre de couleurs et lavable à la machine,
+                            ce tissu est idéal pour contraster ou combiner avec d'autres motifs ou teintes.
+                        </p>
+                        <p class="notice">
+                            Veuillez noter que des variations de nuances peuvent se produire en raison 
+                            de colorants du fabricant
+                        </p>
+                        <div class="sing-img">
+                            <img src="img/sing-back.png"  class="img-responsive" alt="image"> 
+                        </div>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sing-collection">
+        <div class="container">
+            <div class="header">
+                    <h1 class="titre">Collection exclusive</h1>
+                    <p class="discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus optio, repellendus.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="items">
+                        <img src="img/item.png" class="img-responsive center-block"alt="image">
+                        <h2>Collection exclusive</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, consequatur.!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="items one">
+                        <img src="img/item.png" class="img-responsive center-block"alt="image">
+                        <h2>Collection exclusive</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, consequatur.!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                        <div class="items two">
+                            <img src="img/item.png" class="img-responsive center-block"alt="image">
+                            <h2>Collection exclusive</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, consequatur.!</p>
+                        </div>
+                    </div>               
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+            <div class="container text-center icons">
+                <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="contact text-center">
+                <ul class="lien">
+                    <li>
+                        <a href="#">Collection</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Collection</a>
+                        </a>
+                    </li>
+                </ul>
+                <h2 class="footer-title">
+                    rester en contact
+                </h2>
+                <p class="footer-discription">
+                    Inscrivez-vous à notre newsletter pour recevoir des mises à jour et des offres exclusives.
+                </p>
+                <form action="">
+                    <input type="email" class="email form-group" placeholder=" YOUR E-MAIL ADDRESS" name="input">
+                    <button class="btn button">S'inscrire</button>
+                </form>
+            </div>
+            <div class="footer-bar text-center">
+                <p class="foot-desc">Copyright © 2018 BenAbda Deco Powred by Milestone : Agence de communication digitale en Tunisie</p>
+            </div>
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
