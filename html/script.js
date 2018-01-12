@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    // $('#sidebarCollapse').click (function () {
-    //     $('.sidebar').toggleClass('active');
-    // });
-    // $('#sidebarCollapse-x').on('click', function () {
-    //     $('.sidebar').toggleClass('active');
-    // });
     var slider = $('.bxslider').bxSlider({
       pagerCustom: '#bx-pager',
       auto: true,
@@ -14,7 +8,6 @@ $(document).ready(function () {
         $('#sidebarCollapse').click (function () {
         $('.navmenu').toggleClass('active');
         $('.im-nav').css("display", "none");
-        // TweenMax.to(".im-nav", 0, {right: '0', display:'none',})
     });
     $('#sidebarCollapse-x').on('click', function () {
         $('.navmenu').toggleClass('active');
@@ -26,18 +19,48 @@ $(document).ready(function () {
     width();
     $(window).resize(function() {
         width();
-            if($(window).width() <= 1444){
-               $('nav').removeClass('sidebar');
-               $('nav').addClass('navbar-fixed-top');
-               $('nav').addClass('navmenu');
-            }
-            else{
+            if ($(window).width() > 1444){
                 $('nav').addClass('sidebar');
                 $('nav').removeClass('navbar-fixed-top');
                 $('nav').removeClass('navmenu');
             }
+            else if($(window).width() <= 1444){
+              $('nav').removeClass('sidebar');
+              $('nav').addClass('navbar-fixed-top');
+              $('nav').addClass('navmenu');
+           }
+            else if($(window).width() <=1024){
+                //Section image  Animation 
+                for (i = 1; i < 4; i++) { 
+                var section1Controller = new ScrollMagic.Controller();
+                var section_1 = new TimelineMax()
+                  .from('#section-'+i+' .img-01',.5, {x:"-=100",autoAlpha:0,ease: Quad.easeOut},0)
+                  .from('#section-'+i+' .img-02',.5, {x:"+=100",autoAlpha:0,ease:Quad.easeOut},0)
+                  .from('#section-'+i+' .img-03',.5, {y:"+=100",autoAlpha:0},0)
+                new ScrollMagic.Scene({
+                  triggerElement:"#section-"+i,
+                  duration: (($('#section-'+i).height())/3)+50,
+                  reverse: true
+                })
+                .setTween(section_1)
+                .addTo(section1Controller);
+                }
+                for (i = 1; i < 4; i++) { 
+                var TitleController = new ScrollMagic.Controller();
+                var titleeffect = new TimelineMax()
+                .from('#section-'+i+' .ligne',.8, {width: 0,ease: Quad.easeOut},0)
+                .from('#section-'+i+' .titre',1, {x:"+=100",autoAlpha:0,ease: Quad.easeOut},0)
+                .from('#section-'+i+' .discription',1, {x:"+=100",autoAlpha:0,ease: Quad.easeOut},0)
+                new ScrollMagic.Scene({
+                triggerElement:"#section-"+i,
+                duration: (($('#section-'+i).height())/4),
+                reverse: true
+                })
+                .setTween(titleeffect)
+                .addTo(TitleController);
+                }
+            }
     });   
-
     //navbar Animation
     $('.sidebar #sidebarCollapse').click(function(){
       $('.sidebar').toggleClass('active');
@@ -64,7 +87,6 @@ $(document).ready(function () {
           reverse: true
         }
       });
-      
     var scenes = {
         'intro': {
           'intro': 'intro-anchor'
@@ -79,8 +101,7 @@ $(document).ready(function () {
           'section-3': 'anchor3'
         }
       }
-
-for(var key in scenes) {
+  for(var key in scenes) {
     if (!scenes.hasOwnProperty(key)) continue;
     var obj = scenes[key];
     for (var prop in obj) {
@@ -91,7 +112,7 @@ for(var key in scenes) {
     }
   } 
     //Animation scroll
-controller.scrollTo(function(target) {
+  controller.scrollTo(function(target) {
       TweenMax.to(window, 1.7, {
         scrollTo : {
           y : target,
@@ -101,57 +122,22 @@ controller.scrollTo(function(target) {
       });
     
     });
-
     //Scroll
-$('.side-menu').click(function(e){
-    var target = e.target,
-    id     = target.getAttribute('href');
-    if(id !== null) {
-        if(id.length > 0) {
-          e.preventDefault();
-          controller.scrollTo(id);
-          if(window.history && window.history.pushState) {
-            history.pushState("", document.title, id);
+  $('.side-menu').click(function(e){
+      var target = e.target,
+      id     = target.getAttribute('href');
+      if(id !== null) {
+          if(id.length > 0) {
+            e.preventDefault();
+            controller.scrollTo(id);
+            if(window.history && window.history.pushState) {
+              history.pushState("", document.title, id);
+            }
           }
         }
-      }
-})
-
-
-//Section image  Animation 
-for (i = 1; i < 4; i++) { 
-    var section1Controller = new ScrollMagic.Controller();
-    var section_1 = new TimelineMax()
-        .from('#section-'+i+' .img-01',.5, {x:"-=100",autoAlpha:0,ease: Quad.easeOut},0)
-        .from('#section-'+i+' .img-02',.5, {x:"+=100",autoAlpha:0,ease:Quad.easeOut},0)
-        .from('#section-'+i+' .img-03',.5, {y:"+=100",autoAlpha:0},0)
-      new ScrollMagic.Scene({
-       triggerElement:"#section-"+i,
-       duration: (($('#section-'+i).height())/3)+50,
-       reverse: true
-      })
-      .setTween(section_1)
-      .addTo(section1Controller);
-}
-
-
-for (i = 1; i < 4; i++) { 
-var TitleController = new ScrollMagic.Controller();
-var titleeffect = new TimelineMax()
-   .from('#section-'+i+' .ligne',.8, {width: 0,ease: Quad.easeOut},0)
-   .from('#section-'+i+' .titre',1, {x:"+=100",autoAlpha:0,ease: Quad.easeOut},0)
-   .from('#section-'+i+' .discription',1, {x:"+=100",autoAlpha:0,ease: Quad.easeOut},0)
-new ScrollMagic.Scene({
-  triggerElement:"#section-"+i,
-  duration: (($('#section-'+i).height())/4),
-  reverse: true
- })
- .setTween(titleeffect)
- .addTo(TitleController);
-}
-
+  });
 // Mouse move img-deco effect
-$(document).mousemove(function(event){
+  $(document).mousemove(function(event){
        var xPos = (event.clientX/$(window).width());
        var yPos = (event.clientY/$(window).height());
        TweenLite.to('.img-deco', 0.6, {x:50*xPos, y:50*yPos, ease:Power1.easeOut});
@@ -159,8 +145,6 @@ $(document).mousemove(function(event){
    });
 
 });
-
-
 //Hover Box
   var $item = $('.item'),
        boxhover;
@@ -190,6 +174,10 @@ $(document).mousemove(function(event){
        .to(title,0.1, {y:0,ease:Power1.easeOut},0)  
        .to(img,0.3, {scale:"1",ease:Power1.easeOut},0)  
     });
+ // slider Animation
+   slider = new TimelineMax()
+     .from('#bx-pager li a',.5 ,{scale:0})
+     .from('.bx-wrapper ul li img',.5 ,{scale:0})
   });
 
     
