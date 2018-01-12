@@ -104,7 +104,7 @@ margin-top: 50px;
 }
 .navmenu{
     position: fixed;
-    width: 100%;
+    width: 100%!important;
     background-color: transparent;
     height: 85px;
     z-index: 100000;
@@ -280,15 +280,43 @@ margin-top: 50px;
 }
 
 /* SLIDER */
-.slider{ 
-    /*height: 50vh; position: relative;*/
- }
-.center{
-    position: absolute;
-    top: 50%; left: 50%; 
-    transform: translate(-50%, -50%); 
-    font-size: 7em;
+.slider{
+    height: 100vh;
+    width: 100%;
 }
+.slid-cont{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#bx-pager ul {
+    list-style: none;
+   position: relative;
+}
+#bx-pager li {
+    display:inline-block;
+    position: absolute;
+}
+.bx-wrapper li{
+    width: auto !important;
+}
+#bx-pager li a{
+    display: none;
+}
+#bx-pager li a.active{
+display: block;
+font-size: 35px;
+font-family: 'ButlerRegular', sans-serif;
+top:2em;
+width: 26vw;
+z-index: 2;
+position: relative;
+}
+.bx-controls-direction{
+    display: none
+}
+
 /**
        SIDE Menu
     */
@@ -300,7 +328,7 @@ margin-top: 50px;
         height: 100vh;
         width: 70px;
         background-color:transparent;
-        z-index: 2;
+        z-index: 5;
     }
     .side-menu img{
         position: fixed;
@@ -419,7 +447,7 @@ li a:hover{ text-decoration: none; color:#111;}
     font-family: 'Montserrat', sans-serif;
     font-weight: 550;
     background-color: #222222;
-    z-index: 1;
+    z-index: 99;
     color: white;
     padding: 1.5em 0;
 }
@@ -495,6 +523,8 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .one { margin-top: 2.5em}
     .sing-collection .two { margin-top: 5em}
     /* Home PAGE */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .side-menu{top: 0;right: 0;width: 120px;}
     .ciseau{top:4.6em; right: 2.5em}
     .line{top:6em; right: 3em;}
@@ -537,6 +567,8 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .two { margin-top: 5em}
     .sing-desc .sing-img { display: none} 
     /* Home PAGE */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important}
     .side-menu{top: 0;right: 0;width: 120px;}
     .ciseau{top:4.6em; right: 2.5em}
     .line{top:6em; right: 3em;}
@@ -579,6 +611,8 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .two { margin-top: 5em}
     .sing-desc .sing-img { display: none} 
     /* Home PAGE */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .side-menu{top: 0;right: 0;width: 120px;}
     .ciseau{top:4.6em; right: 2.5em}
     .line{top:6em; right: 3em;}
@@ -631,7 +665,10 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .items h2{ padding-left: 0em; font-family:'ButlerRegular', serif; color: #111; font-size: 2em; text-align: center}
     .sing-collection .items p{ line-height: 1.8em; padding: .5em 0em 1em; font-family: 'Montserrat', serif; text-align: center}
     /*  HOME PAGE  */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .side-menu{top: 0;right: 0;width: 120px;}
+    .slider{ display: none;}
     .ciseau{top:4.6em; right: 2.5em}
     .line{top:6em; right: 3em;}
     .x-1{top: 18em;right: 4.5em;}
@@ -681,7 +718,10 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .items h2{ padding-left: 0em; font-family:'ButlerRegular', serif; color: #111; font-size: 2em; text-align: center}
     .sing-collection .items p{ line-height: 1.8em; padding: .5em 0em 1em; font-family: 'Montserrat', serif; text-align: center}
     /*  HOME PAGE  */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .side-menu{ display: none;}
+    .slider{ display: none;}
     .navbar{visibility: visible}
     .section_one .img-02{position: relative; top: 0em;}
     .section_one .img-03{position: relative;top:0em;left:0em;}
@@ -701,6 +741,7 @@ li a:hover{ text-decoration: none; color:#111;}
 }
 @media (min-width:375px) and (max-width:425px){
     /* PRODUCT PAGE */
+    .im-nav{display: none!important}
     .baground{ display: none}
     .prod-head {margin-top: 10em;}
     .prod-head .title {text-indent:0em; position: absolute; z-index: 2; top: 5em; left: 0em; text-align:center;font-family:'ButlerRegular', sans-serif; font-size: 2.8em; color: #111; font-weight: 600}
@@ -726,7 +767,10 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .items h2{ padding-left: .5em; font-family:'ButlerRegular', serif; color: #111; font-size: 3.5em}
     .sing-collection .items p{ line-height: 1.8em; padding: .5em 2em; font-family: 'Montserrat', serif}
     /*  HOME PAGE  */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .side-menu{ display: none;}
+    .slider{ display: none;}
     .section_one .img-02{position: relative; top: 0em;}
     .section_one .img-03{position: relative;top:0em;left:0em;}
     .section_two .img-01{position: relative;z-index:2}
@@ -776,6 +820,9 @@ li a:hover{ text-decoration: none; color:#111;}
     .sing-collection .items h2{ padding-left: .5em; font-family:'ButlerRegular', serif; color: #111; font-size: 3.5em}
     .sing-collection .items p{ line-height: 1.8em; padding: .5em 2em; font-family: 'Montserrat', serif}
     /*  HOME PAGE  */
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .slider{ display: none;}
     .side-menu{ display: none;}
     .section_one .img-02{position: relative; top: 0em;}
     .section_one .img-03{position: relative;top:0em;left:0em;}
@@ -826,6 +873,8 @@ li a:hover{ text-decoration: none; color:#111;}
      .sing-collection .items h2{ padding-left: .5em; font-family:'ButlerRegular', serif; color: #111; font-size: 3.5em}
      .sing-collection .items p{ line-height: 1.8em; padding: .5em 2em; font-family: 'Montserrat', serif}
     /*  HOME PAGE  */
+    .navmenu .list-unstyled{ transform: translate(50%, -50%)!important;}
+    .im-nav{display: none!important; position: unset!important; right: 0!important}
     .slider{ display: none;}
     .section_one { margin-top: 9em}
     .side-menu{ display: none;}

@@ -5,8 +5,16 @@ $(document).ready(function () {
     // $('#sidebarCollapse-x').on('click', function () {
     //     $('.sidebar').toggleClass('active');
     // });
+    var slider = $('.bxslider').bxSlider({
+      pagerCustom: '#bx-pager',
+      auto: true,
+      infiniteLoop:true,
+      responsive:true
+    });
         $('#sidebarCollapse').click (function () {
         $('.navmenu').toggleClass('active');
+        $('.im-nav').css("display", "none");
+        // TweenMax.to(".im-nav", 0, {right: '0', display:'none',})
     });
     $('#sidebarCollapse-x').on('click', function () {
         $('.navmenu').toggleClass('active');
@@ -18,7 +26,7 @@ $(document).ready(function () {
     width();
     $(window).resize(function() {
         width();
-            if($(window).width() <= 1400){
+            if($(window).width() <= 1444){
                $('nav').removeClass('sidebar');
                $('nav').addClass('navbar-fixed-top');
                $('nav').addClass('navmenu');
@@ -31,7 +39,7 @@ $(document).ready(function () {
     });   
 
     //navbar Animation
-    $('#sidebarCollapse').click(function(){
+    $('.sidebar #sidebarCollapse').click(function(){
       $('.sidebar').toggleClass('active');
       var tl= new TimelineMax()
       .to(".sidebar.active", .5,{width:'100vw', ease: Power2.easeInOut},0)
@@ -39,7 +47,7 @@ $(document).ready(function () {
       .staggerFromTo(".elem", .5, {opacity:0}, {opacity:1}, 0.2)
       .to(".im-nav", .6, {right: '0', display:'block', ease: Power2.easeInOut},.5)
     });
-    $('#sidebarCollapse-x').click(function(){
+    $('.sidebar #sidebarCollapse-x').click(function(){
       tl2= new TimelineMax()
       .to(".im-nav", .3, {right: '-20', display:'none', ease: Power2.easeInOut},0)
       .to(".list-unstyled", .6, {x:'-50%', ease: Power2.easeInOut},.4)
